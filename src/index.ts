@@ -1,13 +1,8 @@
 import { CsvFileReader } from "./CsvFileReader"
+import { MatchResult } from "./MatchResult"
 
 const reader = new CsvFileReader('football.csv')
 reader.read()
-
-enum MatchResult {
-    HomeWin = 'H',
-    AwayWin = 'A',
-    Draw = 'D'
-}
 
 let manUnitedWins = 0
 
@@ -20,3 +15,4 @@ for (let match of reader.data) {
 }
 
 console.log(`Man United won ${manUnitedWins} games`)
+console.log(reader.data[0][0])
